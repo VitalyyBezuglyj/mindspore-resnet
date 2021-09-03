@@ -1,0 +1,71 @@
+{'enable_modelarts': 'Whether training on modelarts, default: False', 'data_url': 'Dataset url for obs', 'checkpoint_url': 'The location of checkpoint for obs', 'data_path': 'Dataset path for local', 'output_path': 'Training output path for local', 'load_path': 'The location of checkpoint for obs', 'device_target': 'Target device type, available: [Ascend, GPU, CPU]', 'enable_profiling': 'Whether enable profiling while training, default: False', 'num_classes': 'Class for dataset', 'batch_size': 'Batch size for training and evaluation', 'epoch_size': 'Total training epochs.', 'checkpoint_path': 'The location of the checkpoint file.', 'checkpoint_file_path': 'The location of the checkpoint file.'}
+{'acc_mode': 'O0',
+ 'batch_size': 32,
+ 'cache_session_id': '',
+ 'checkpoint_file_path': '',
+ 'checkpoint_path': './checkpoint/',
+ 'checkpoint_url': '',
+ 'ckpt_file': '',
+ 'class_num': 10,
+ 'conv_init': 'XavierUniform',
+ 'data_path': '/cache/data',
+ 'data_url': '',
+ 'dataset': 'cifar10',
+ 'dense_init': 'TruncatedNormal',
+ 'device_id': 0,
+ 'device_num': 1,
+ 'device_target': 'GPU',
+ 'enable_cache': False,
+ 'enable_modelarts': False,
+ 'enable_profiling': False,
+ 'epoch_size': 90,
+ 'eval_dataset_path': '',
+ 'eval_interval': 1,
+ 'eval_start_epoch': 40,
+ 'file_format': 'AIR',
+ 'file_name': 'resnet18',
+ 'filter_weight': False,
+ 'height': 224,
+ 'infer_label': '',
+ 'keep_checkpoint_max': 10,
+ 'lars_coefficient': 0.001,
+ 'lars_epsilon': 0.0,
+ 'load_path': '/cache/checkpoint_path/',
+ 'loss_scale': 1024,
+ 'lr_decay_mode': 'poly',
+ 'lr_end': 1e-05,
+ 'lr_init': 0.01,
+ 'lr_max': 0.1,
+ 'mode_name': 'GRAPH',
+ 'momentum': 0.9,
+ 'net_name': 'resnet18',
+ 'network_dataset': 'resnet18_cifar10',
+ 'optimizer': 'Momentum',
+ 'output_path': '/cache/train',
+ 'parameter_server': False,
+ 'pre_trained': '',
+ 'pretrain_epoch_size': 0,
+ 'run_distribute': False,
+ 'run_eval': False,
+ 'save_best_ckpt': True,
+ 'save_checkpoint': True,
+ 'save_checkpoint_epochs': 5,
+ 'train_url': '',
+ 'warmup_epochs': 5,
+ 'weight_decay': 0.0001,
+ 'width': 224}
+Train starts
+Traceback (most recent call last):
+  File "train.py", line 293, in <module>
+    train_net()
+  File "/home/kowalski/mindspore/mindspore/model_zoo/official/cv/resnet/scripts/train/src/model_utils/moxing_adapter.py", line 104, in wrapped_func
+    run_func(*args, **kwargs)
+  File "train.py", line 227, in train_net
+    set_parameter()
+  File "train.py", line 96, in set_parameter
+    context.set_context(mode=context.GRAPH_MODE, device_target=target, save_graphs=False)
+  File "/home/kowalski/mindspore/lib/python3.7/site-packages/mindspore/_checkparam.py", line 943, in wrapper
+    return func(*args, **kwargs)
+  File "/home/kowalski/mindspore/lib/python3.7/site-packages/mindspore/context.py", line 695, in set_context
+    raise ValueError(f"Error, package type {__package_name__} support device type {__device_target__}, "
+ValueError: Error, package type mindspore support device type cpu, but got device target GPU

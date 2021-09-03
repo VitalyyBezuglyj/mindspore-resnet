@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../../../mindspore-WideResnet"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../densenet"
+		}
+	],
+	"settings": {}
+}
